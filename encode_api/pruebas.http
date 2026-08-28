@@ -1,0 +1,45 @@
+@direccion = http://localhost:5070
+
+### Abrir Swagger desde la dirección principal (solo en desarrollo)
+GET {{direccion}}/
+
+### Comprobar que la API responde
+GET {{direccion}}/api/prueba
+Accept: text/plain
+
+### Consultar la documentación de Swagger
+GET {{direccion}}/swagger/v1/swagger.json
+Accept: application/json
+
+### Listar estudiantes
+GET {{direccion}}/Student
+Accept: application/json
+
+### Crear estudiante
+POST {{direccion}}/Student
+Content-Type: application/json
+
+{
+  "name": "Ana Perez",
+  "age": 20,
+  "dni": "48000001",
+  "file": "ST004"
+}
+
+### Consultar el estudiante creado (usar el Id devuelto por POST)
+GET {{direccion}}/Student/4
+Accept: application/json
+
+### Actualizar estudiante
+PUT {{direccion}}/Student/4
+Content-Type: application/json
+
+{
+  "name": "Ana Gomez",
+  "age": 21,
+  "dni": "48000001",
+  "file": "ST004"
+}
+
+### Eliminar estudiante
+DELETE {{direccion}}/Student/4
